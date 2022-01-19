@@ -1,0 +1,30 @@
+{
+  "name": "bjtest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "abab": "^2.0.5",
+    "fetch-wechat": "^0.0.3",
+    "mp-helper": "^0.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "mp-helper -w -c",
+    "build": "mp-helper -c",
+    "lint": "eslint --fix \"**/*.js\"",
+    "outdated": "tnpm outdated"
+  },
+  "author": "",
+  "license": "ISC",
+  "mp-helper": {
+    "io": [
+      {
+        "input": "client/src",
+        "output": "client/.dist"
+      }
+    ],
+    "clean": true
+  }
+}

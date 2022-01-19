@@ -1,0 +1,25 @@
+face-highlight {
+  position: relative;
+}
+.face-highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.face-highlight .face-highlight-content {
+  position: relative;
+}
+.face-highlight .face-highlight-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.face-highlight .face-highlight-canvas {
+  width: 100%;
+  height: 100%;
+}

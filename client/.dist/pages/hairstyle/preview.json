@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "发型屋",
+    "backgroundColorBottom": "#ffffff",
+    "usingComponents": {
+        "face-highlight": "./components/faceHighlight",
+        "face-avatar": "./components/faceAvatar",
+        "error-tip": "./components/errorTip",
+        "image-loader": "./components/imageLoader"
+    }
+}

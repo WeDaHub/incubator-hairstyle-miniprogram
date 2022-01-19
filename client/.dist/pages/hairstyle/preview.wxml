@@ -1,0 +1,51 @@
+<error-tip />
+
+<view class="container fusion {{ $store.isIpx ? 'is-ipx' : '' }}">
+    <view class="content">
+        <!--预览区（可高亮）-->
+        <face-highlight
+            class="main-preview"
+            image-mode="aspectFit"
+            src="{{ resultUrl }}"
+            materialSrc="{{ faceList[0].Url }}"
+            showOriginal="{{ showOriginal }}"
+            bindtap="tapPreview"
+            bindlongpress="tapPreview" />
+
+        <!--悬浮按钮组-->
+        <cover-view class="fusion-tool-btn">
+            <cover-image 
+                class="btn-icon" 
+                src="/assets/imgs/contrast.png"
+                catchtouchstart="tapContrast" 
+                catchtouchend="tapContrastCancel" 
+                catchtouchcancel="tapContrastCancel"
+            />
+            <cover-view style="justify-content: flex-end; display: flex; margin-right: 10px;">
+                <cover-image class="btn-icon" src="/assets/imgs/exchange.png" bindtap="tapExchange" />
+                <cover-image wx:if="{{ resultUrl }}" class="btn-icon" src="/assets/imgs/download.png" bindtap="tapDownload" />
+            </cover-view>
+        </cover-view>
+
+        <!--底部区域-->
+        <view class="bottom-bar">
+            <!--模板列表-->
+            <view class="face-list-bar">
+                <scroll-view scroll-x style="height: 100%">
+                    <view class="list-bar-tab-content">
+                        <image-loader
+                            wx:for="{{ resultUrls || materialList[currentGender]  }}"
+                            wx:key="MaterialId"
+                            class="face-round {{ index === currentIndex ? 'active' : '' }}"
+                            mode="aspectFill"
+                            src="{{ item.Url }}"
+                            data-index="{{ index }}"
+                            bindtap="switchMaterial"
+                            cache />
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+    </view>
+</view>
+<view></view>

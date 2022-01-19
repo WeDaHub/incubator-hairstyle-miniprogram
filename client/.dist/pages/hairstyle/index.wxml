@@ -1,0 +1,58 @@
+<error-tip />
+    <view class="container face-fusion-choose-face {{ $store.isIpx ? 'is-ipx' : '' }}">
+        <view class="content">
+            <!--照相页面-->
+            <view class="take-photo" wx:if="{{ !previewSrc }}">
+                <view class="camera-area">
+                    <camera device-position="{{ devicePosition }}"
+                            flash="off"
+                            bindinitdone="cameraInitDone"
+                            binderror="cameraError"
+                            style="height:{{ cameraHeight }}px;width:{{ cameraWidth }}px">
+                        <cover-view class="ai-ff-camera__area show">
+                            <cover-image src="https://main.qcloudimg.com/raw/23a5ab7615db2a38f2fbaaf2c18968da.png" />
+                        </cover-view>
+                    </camera>
+                </view>
+                <!--照相页面按钮区-->
+                <view class="take-photo-bottom inner show">
+                    <view class="ai-ff-camera__btn ai-ff-camera__btn--picture" bindtap="tapAlbum"></view>
+                    <view class="ai-ff-camera__btn ai-ff-camera__btn--take" bindtap="takePhoto"></view>
+                    <view class="ai-ff-camera__btn ai-ff-camera__btn--spin" bindtap="tapSwitchLens"></view>
+                </view>
+            </view>
+    
+            <!--确认照片页面-->
+            <view class="photo-preview" wx:else>
+                <face-highlight
+                    class="preview-image"
+                    image-mode="aspectFit"
+                    src="{{ previewSrc }}"
+                    faces="{{ faces }}"
+                    show-mask="{{ faces.length > 1 }}"
+                    show-index-tag
+                    active-indexs="{{ activeFaceIndexs }}"
+                    bindtapface="tapface" />
+                <!--确认照片按钮区-->
+                <view class="photo-preview-bottom inner show">
+                    <view class="ai-ff-camera__btn-media">
+                        <button 
+                            class="primary_button" 
+                            fill="outline" 
+                            style="background: white;color: #006eff;border: solid 1px #006eff;width:100%"
+                            bindtap="previewCancel"
+                        >取消</button>
+                    </view>
+                    <view class="ai-ff-camera__btn-media ">
+                        <button 
+                            class="primary_button" 
+                            disabled="{{ activeFaceIndexs.length < 1 ? true : false }}" 
+                            bindtap="previewConfirm"
+                            style="background: #006eff;color: white;width:100%"
+                        >确定</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+<view></view>

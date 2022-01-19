@@ -1,0 +1,13 @@
+<view class="face-avatar">
+    <!-- Error -->
+    <view class="face-error-placeholder fadeIn face--error" wx:if="{{ error }}"></view>
+    <!-- Loading -->
+    <view class="face-loading-placeholder fadeIn face--loading" wx:elif="{{ !loaded }}"></view>
+    <image
+        class="face-avatar-image"
+        mode="aspectFill"
+        src="{{ src }}"
+        bindload="bindload"
+        binderror="binderror"
+        style="{{ style }}" />
+</view>

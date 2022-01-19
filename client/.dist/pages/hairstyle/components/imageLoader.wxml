@@ -1,0 +1,9 @@
+<!-- Error -->
+<view class="image-error-placeholder fadeIn {{ errorClass }}" wx:if="{{ error }}" style="{{ loadingStyle }}"></view>
+<!-- Loading -->
+<view class="image-loading-placeholder fadeIn {{ loadingClass }}" wx:elif="{{ !loaded }}" style="{{ errorStyle }}">
+</view>
+<!-- 原图 -->
+<image wx:if="{{ imageSrc }}" class="{{ imageClass }}" src="{{ imageSrc }}" mode="{{ mode }}"
+    lazy-load="{{ lazyLoad }}" show-menu-by-longpress="{{ showMenuByLongpress }}" binderror="binderror"
+    bindload="bindload" />

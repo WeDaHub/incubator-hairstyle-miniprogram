@@ -1,0 +1,17 @@
+{
+  "name": "CommonInterface",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "configkeyhelpernodejs": "git+http://bilibiliye@git.code.oa.com/iai-sendto-npmUtils/ConfigKeyHelperNodejs.git",
+    "wx-server-sdk": "latest",
+    "moment": "^2.23.0",
+    "request": "^2.88.0"
+  }
+}

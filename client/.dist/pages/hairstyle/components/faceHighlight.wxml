@@ -1,0 +1,28 @@
+<scroll-view
+    class="face-highlight"
+    scroll-x="{{ imageMode === 'scroll' }}"
+    scroll-y="{{ imageMode === 'scroll' }}"
+    scroll-top="{{ scrollTop }}"
+    scroll-left="{{ scrollLeft }}"
+    bindscroll="bindscroll">
+    <view class="face-highlight-content" style="{{ imageStyle }}">
+        <!-- 原图 -->
+        <image
+            wx:if="{{ materialSrc }}"
+            style="display: {{ showOriginal ? 'block' : 'none' }}"
+            class="face-highlight-image"
+            src="{{ materialSrc }}"
+            mode="{{ imageMode === 'scroll' ? 'scaleToFill' : imageMode }}"
+            bindload="bindload" />
+        <!-- 素材图 -->
+        <image
+            wx:if="{{ imageSrc }}"
+            style="display: {{ showOriginal ? 'none' : 'block' }}"
+            class="face-highlight-image"
+            src="{{ imageSrc }}"
+            mode="{{ imageMode === 'scroll' ? 'scaleToFill' : imageMode }}"
+            bindload="bindload" />
+        <!-- 蒙层 -->
+        <canvas class="face-highlight-canvas" canvas-id="highlightCanvas" bindtap="tapCanvas" style="display:{{ hidden ? 'none' : 'block' }}" />
+    </view>
+</scroll-view>

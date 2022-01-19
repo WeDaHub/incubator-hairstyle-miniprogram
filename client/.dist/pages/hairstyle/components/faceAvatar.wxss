@@ -1,0 +1,47 @@
+.face-avatar {
+  position: relative;
+  width: 156rpx;
+  height: 156rpx;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.face-avatar .face-avatar-image {
+  position: absolute;
+  display: block;
+}
+.face-avatar .face-avatar-image.image--hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.face-avatar .face-loading-placeholder,
+.face-avatar .face-error-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center center;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.face-avatar .fadeIn {
+  opacity: 1;
+}
+.face-avatar .face--loading {
+  animation: loading 1s ease-in-out infinite alternate;
+}
+.face-avatar .face--error {
+  background-color: #fad9d9;
+}
+@keyframes loading {
+  from {
+    background-color: #f5f5f5;
+  }
+  to {
+    background-color: #ececec;
+  }
+}

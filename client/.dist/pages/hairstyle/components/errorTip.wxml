@@ -1,0 +1,3 @@
+<view class="tips {{ _store.error ? 'show' : ''}}">
+  <view class="text">{{ _store.error }}</view>
+</view>
