@@ -23,4 +23,5 @@
 
 3. 发型生成
 并发地生成各种发型（长发7款+短发7款），左下角按钮切换原图查看对比效果，右下角按钮可切换性别和下载图片
+
 <img src="./readme-image/female.png" width="300"><img src="./readme-image/male.png" width="300">
