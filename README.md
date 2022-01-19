@@ -2,6 +2,8 @@
 
 人脸融合实现你的发型屋
 
+使用[mp-helper](https://github.com/cong-min/mp-helper)作为开发框架
+
 /packages/cloud  服务端云函数源码  
 /packages/client 小程序端源码
 
