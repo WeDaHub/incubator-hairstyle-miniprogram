@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "configkeyhelpernodejs": "git+http://bilibiliye@git.code.oa.com/iai-sendto-npmUtils/ConfigKeyHelperNodejs.git",
     "wx-server-sdk": "latest",
     "moment": "^2.23.0",
     "request": "^2.88.0"
